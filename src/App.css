@@ -84,3 +84,30 @@ h1{
   background-color: #C0D0FA;
   color: white; 
 }
+
+@media only screen and (max-width: 411px){
+
+  h1{
+    font-size: 45px;
+  }
+
+  .usuarios-box-img {
+    margin-left: 5px;
+    
+  }
+
+  .usuarios-box-name-id{
+    margin-left: 10px;
+    margin-top: 45px;
+  }
+
+  .usuarios-box-button{
+    margin-right: 5px;
+  }
+
+  .usuarios-box-name-id h3{
+    font-size: 16px;
+  }
+
+
+}
