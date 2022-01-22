@@ -1,22 +1,25 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import "./App.css"
+import "./App.css";
+import AppProjectPayment from "./AppProjectPayment";
+
+
 
 export default function App(){
 
 	const [itens, setItens] = useState([]);
+	const [pagamentos, setPagamentos] = useState(false);
 
 	useEffect(()=>{
 		axios.get('https://www.mocky.io/v2/5d531c4f2e0000620081ddce',{method:'GET',})
 			.then((resposta)=>{
 				setItens(resposta.data)
 		    })
-	}, [])
+	}, []);
 
 		return (
-			<>			
+			<>
 				<h1 className="titulo">Lista de usuários</h1>
-
 				    {itens.map(item =>(
 						<div className="usuarios">
 							<div className="usuarios-box">
@@ -29,11 +32,13 @@ export default function App(){
 									<h3>Username: <i>{item.username}</i></h3>
 								</div>
 								<div className="usuarios-box-button">
-									<button>Pagar</button>
+									<button onClick={()=>{setPagamentos(true)}}>Pagar</button>
 								</div>
 							</div>
 						</div>
 					))}
+					{pagamentos && <AppProjectPayment makePayments={setPagamentos}/>}
 			</>
 		);
 }
+
