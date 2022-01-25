@@ -19,25 +19,31 @@ export default function App(){
 
 		return (
 			<>
-				<h1 className="titulo">Lista de usuários</h1>
-				    {itens.map(item =>(
-						<div className="usuarios">
-							<div className="usuarios-box">
-								<div className="usuarios-box-img">
-									<img src={item.img}/>
+				{
+				  !pagamentos && 
+					<div> 
+						<h1 className="titulo">Lista de usuários</h1>
+						    {itens.map(item =>(
+								<div className="usuarios">
+									<div className="usuarios-box">
+										<div className="usuarios-box-img">
+											<img src={item.img}/>
+										</div>
+										<div className="usuarios-box-name-id">
+											<h3>Nome do usuário: <i>{item.name}</i></h3>
+											<h3>ID: <i>{item.id}</i></h3>
+											<h3>Username: <i>{item.username}</i></h3>
+										</div>
+										<div className="usuarios-box-button">
+											<button onClick={()=>{setPagamentos(true)}}>Pagar</button>
+										</div>
+									</div>
 								</div>
-								<div className="usuarios-box-name-id">
-									<h3>Nome do usuário: <i>{item.name}</i></h3>
-									<h3>ID: <i>{item.id}</i></h3>
-									<h3>Username: <i>{item.username}</i></h3>
-								</div>
-								<div className="usuarios-box-button">
-									<button onClick={()=>{setPagamentos(true)}}>Pagar</button>
-								</div>
-							</div>
-						</div>
-					))}
-					{pagamentos && <AppProjectPayment makePayments={setPagamentos}/>}
+							))}
+					</div>
+				}
+
+				{pagamentos && <AppProjectPayment makePayments={setPagamentos}/>}
 			</>
 		);
 }

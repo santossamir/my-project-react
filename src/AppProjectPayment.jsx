@@ -1,6 +1,7 @@
 
 import "./App.css"
 
+
 export default function AppPayment({makePayments}){
 	return(
 		<>		
@@ -21,6 +22,5 @@ export default function AppPayment({makePayments}){
 					</div>
 				</div>	
 		</>
-
 	)
 }
