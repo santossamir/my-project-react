@@ -11,8 +11,11 @@
     "gs": "^0.0.2",
     "mirage": "^0.0.7",
     "react": "^17.0.2",
+    "react-currency-input-field": "^3.6.4",
     "react-dom": "^17.0.2",
+    "react-input-mask": "^2.0.4",
     "react-modal": "^3.14.4",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },

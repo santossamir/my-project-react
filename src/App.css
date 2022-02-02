@@ -180,8 +180,46 @@ h1{
   height: 138px; 
   text-align: center;
   padding: 40px;
+  font-size: 20px;
+}
+
+.div-button-paid-sucess{
+  background-color: #292b3f;
+  height: 60px; 
+  text-align: center;
+  padding: 10px;
   border-radius: 0 0 5px 5px;
-  font-size: 18px;
+}
+
+.button-paid-sucess{
+  width: 100px;
+  height: 40px;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  background-color: white;
+  color: #424242; 
+  font-size: 20px;
+}
+
+.button-paid-sucess:hover{
+  background-color: #C0D0FA;
+  color: white; 
+}
+
+.button-paid-error{
+  width: 100px;
+  height: 40px;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  background-color: white;
+  color: #424242; 
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.button-paid-error:hover{
+  background-color: #C0D0FA;
+  color: white; 
 }
 
 @media only screen and (max-width: 411px){
