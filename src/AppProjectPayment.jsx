@@ -98,6 +98,10 @@ export default function AppPayment(props){
 
         e.currentTarget.value = valor;
     }
+
+    const changeErro = () => {
+    	setModal(false)
+    }
       
 	return(
 		<>		
@@ -126,7 +130,7 @@ export default function AppPayment(props){
 				</div>
 			}	
 				{modal && sucesso && <AppPaidSucess/>}
-				{modal && !sucesso && <AppPaidError/>}
+				{modal && !sucesso && <AppPaidError changeModal={changeErro} />}
 		</>
 	)
 }

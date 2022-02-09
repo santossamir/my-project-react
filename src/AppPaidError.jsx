@@ -1,21 +1,11 @@
 import "./App.css";
 import AppProjectPayment from "./AppProjectPayment";
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-export default function AppPaidError(){
+export default function AppPaidError(props){
 
 	const closeModal = ()=> {
 		window.location.reload();
 	}
-
-	const redirecionar = () =>{
-			<Router>
-				<Route exact path="/AppProjectPayment">
-					<AppProjectPayment/>
-				</Route>
-			</Router>
-	}
-
 	
 	return(
 		<div className="modal-container">
@@ -28,7 +18,7 @@ export default function AppPaidError(){
 					</div>
 					<div className="div-button-paid-sucess">
 						<button className="button-paid-error" onClick={closeModal}>Fechar</button>
-						<button className="button-paid-error" onClick= {redirecionar}>Retornar</button>
+						<button className="button-paid-error" onClick= {props.changeModal}>Retornar</button>
 					</div>
 				</div>
 		</div>
