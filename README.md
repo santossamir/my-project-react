@@ -1,3 +1,23 @@
+# my-project-react
+Esse projeto é uma aplicação que simula o envio de dinheiro para uma outra pessoa, via cartão de crédito.
+O foco dele foi utilizar a biblioteca do JavaScript React. Assim, desenvolvemos na primeira tela uma
+listagem de usuários, onde a pessoa pode clicar em algum usuário da lista para realizar o pagamento.
+Quando clicado em um usuário é então aberto um modal de pagamento, contendo as informações do usuário de
+destino, a opção de selecionar um cartão de crédito e um botão de pagar. O usuário deve então digitar o
+valor, escolher o cartão e clicar em pagar. Para realização do pagamento deve-se chamar um endpoint de
+pagamento que aprovará/recusará a transação. E então deve-se mostrar na tela o modal de pagamento concluído
+com sucesso ou o de erro.
+
+![Captura de tela de 2022-02-10 21-20-53](https://user-images.githubusercontent.com/88064533/153519651-3b327c6c-131c-45af-b519-2d82269e7076.png)
+![Captura de tela de 2022-02-10 21-21-01](https://user-images.githubusercontent.com/88064533/153519687-566ee962-8acb-45c9-98f4-e698d2d5a97b.png)
+![Captura de tela de 2022-02-10 21-21-13](https://user-images.githubusercontent.com/88064533/153519713-7ca01d8c-7afe-4a3d-be0c-89022181b177.png)
+![Captura de tela de 2022-02-10 21-21-28](https://user-images.githubusercontent.com/88064533/153519745-060332bb-555c-4bbe-9af0-274534640f41.png)
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
