@@ -12,7 +12,6 @@ export default function AppPayment(props){
 	const [modal, setModal] = useState(false);
 	const [sucesso, setSucesso] = useState(false);
 	console.log(valor);
-
     
     let cards = [
 	  // valid card
@@ -30,45 +29,41 @@ export default function AppPayment(props){
 	];
 
 	const submitValue = () => {
-        let valorDoDinheiro = document.querySelector("#inputDoValor").value;
+		if(valor === ""){
+			document.querySelector("#inputDoValor").focus()
+		}else if(cartao === ""){
+			document.querySelector("#selectCartao").focus();
+		} else {
+			console.log("Valor ", valor);
+			console.log("Cartão ", cartao);
 
-			if(valorDoDinheiro === ""){
-				document.querySelector("#inputDoValor").focus();
+			let payload = {
+				"card_number": cartao.card_number,
+				"cvv": cartao.cvv,
+				"expiry_date": cartao.expiry_date,
+			
+				// Destination User ID
+				"destination_user_id": props.idUsuario,
+			
+				// Value of the Transaction
+				"value": valor
+			}
+			
+			console.log("payload ", payload);
+			
+			axios.post(`https://run.mocky.io/v3/533cd5d7-63d3-4488-bf8d-4bb8c751c989`, { payload })
+				.then(res => {
+					console.log(res);
+					console.log(res.data);
+					setModal(true);
 
-			}else if(cartao === ""){
-				document.querySelector("#selectCartao").focus();
-			} else {
-					console.log("Valor ", valor);
-					console.log("Cartão ", cartao);
-
-					let payload = {
-						"card_number": cartao.card_number,
-						"cvv": cartao.cvv,
-						"expiry_date": cartao.expiry_date,
-					
-						// Destination User ID
-						"destination_user_id": props.idUsuario,
-					
-						// Value of the Transaction
-						"value": valor
+					if(cartao.card_number == "4111111111111234"){
+						setSucesso(false);
+					}else{
+						setSucesso(true);
 					}
-				
-					console.log("payload ", payload);
-				
-					axios.post(`https://run.mocky.io/v3/533cd5d7-63d3-4488-bf8d-4bb8c751c989`, { payload })
-						.then(res => {
-							console.log(res);
-							console.log(res.data);
-							setModal(true);
-
-							if(cartao.card_number == "4111111111111234"){
-								setSucesso(false);
-							}else{
-								setSucesso(true);
-							}
-						})
-				}
-	
+				})
+			}
 	}
 
 	function handleChange(e){
