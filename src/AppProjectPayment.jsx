@@ -27,12 +27,14 @@ export default function AppPayment(props){
 	    expiry_date: '01/20',
 	  },
 	];
-
+	
+	var inputDoValor;
+	var selectCartao;
 	const submitValue = () => {
 		if(valor === ""){
-			document.querySelector("#inputDoValor").focus()
+			inputDoValor.focus()
 		}else if(cartao === ""){
-			document.querySelector("#selectCartao").focus();
+			selectCartao.focus();
 		} else {
 			console.log("Valor ", valor);
 			console.log("Cartão ", cartao);
@@ -106,9 +108,9 @@ export default function AppPayment(props){
 					<div className="dados-pagamento">
 						<div className="box-pagamentos">
 							<input type="text" onKeyPress={(event)=>{formatCurrency(event)}} placeholder="R$ 0,00" 
-							       id="inputDoValor" onChange={(e)=> setValor(e.target.value)} className="box-pagamentos-input" />
+							    ref={input => inputDoValor = input }    onChange={(e)=> setValor(e.target.value)} className="box-pagamentos-input" />
 							<div className="select-box">
-								<select className="dados-pagamento-select" id="selectCartao" onChange={handleChange}>
+								<select className="dados-pagamento-select" ref={select => selectCartao = select} onChange={handleChange}>
 									<option>Nº do Cartão</option>
 									{cards.map((card, index) =>                              
 											<option value={index} key={index}>
